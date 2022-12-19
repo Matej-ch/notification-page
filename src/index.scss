@@ -30,10 +30,6 @@
   margin: 0;
 }
 
-html, body {
-  height: 100%;
-}
-
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -58,6 +54,6 @@ p, h1, h2, h3, h4, h5, h6 {
 
 @media screen and (min-width: 376px) {
   html, body {
-    background-color: var(--ligthGrayBlue1);
+    background-color: var(--veryLightGrayBlue);
   }
 }
