@@ -5,5 +5,6 @@ export default interface Notification {
     date: string,
     message?: string,
     avatar: string,
-    isRead: boolean
+    isRead: boolean,
+    picture?: string
 }

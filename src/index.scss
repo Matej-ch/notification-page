@@ -32,7 +32,6 @@
 
 html, body {
     height: 100%;
-    background-color: var(--white);
 }
 
 body {
@@ -55,4 +54,10 @@ p, h1, h2, h3, h4, h5, h6 {
 
 #root, #__next {
     isolation: isolate;
+}
+
+@media screen and (min-width: 376px) {
+    html, body {
+        background-color: var(--ligthGrayBlue2);
+    }
 }

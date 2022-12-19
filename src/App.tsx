@@ -48,6 +48,7 @@ function App() {
             date: '1 week ago',
             avatar: 'avatar-kimberly-smith.webp',
             isRead: true,
+            picture: 'image-chess.webp'
         },
         {
             name: 'Nathan Peterson',
@@ -78,12 +79,10 @@ function App() {
     }
 
     return (
-        <div className="App">
+        <div className="App" role={'main'}>
             <NotificationHeader notificationCount={notifications.filter(notif => !notif.isRead).length} handleAllNotifications={handleAllNotifications} />
 
-            {notifications.map(notif => {
-                return <NotificationComponent notification={notif} key={notif.avatar} />
-            })}
+            {notifications.map(notif => {return <NotificationComponent notification={notif} key={notif.avatar} />})}
 
         </div>
     )

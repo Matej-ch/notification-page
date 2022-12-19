@@ -11,6 +11,12 @@
 
 @media screen and (min-width: 376px) {
   #root {
-    max-width: 1440px;
+    max-width: 1200px;
+  }
+
+  .App {
+    background-color: var(--white);
+    border-radius: 5px;
+    padding: 2rem 2rem 0.25rem 2rem;
   }
 }

@@ -17,6 +17,8 @@ function NotificationComponent({notification}: {notification:Notification})
             <div className={'date'}>{notification.date}</div>
 
             {notification.message && <div className={'private-message'}>{notification.message}</div>}
+
+            {notification.picture && <img src={getImageUrl(notification.picture)} alt="commented picture" className={'commented-picture'} width={45} height={45}/>}
         </div>
     </div>)
 }
