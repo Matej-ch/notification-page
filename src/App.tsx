@@ -1,16 +1,9 @@
-import {useState} from 'react'
+import {MouseEvent, useState} from 'react'
 import './App.scss'
 import NotificationHeader from "./NotificationHeader";
+import NotificationComponent from "./NotificationComponent";
+import Notification from './INotification'
 
-interface Notification {
-    name: string,
-    action:string,
-    event?: string,
-    date: string,
-    message?: string,
-    avatar: string,
-    isRead: boolean
-}
 
 function App() {
 
@@ -46,7 +39,7 @@ function App() {
             date: '5 days ago',
             message: 'Hello, thanks for setting up the Chess Club. I\'ve been a member for a few weeks now and I\'m already having lots of fun and improving my game',
             avatar: 'avatar-rizky-hasanuddin.webp',
-            isRead: false,
+            isRead: true,
         },
         {
             name: 'Kimberly Smith',
@@ -74,9 +67,24 @@ function App() {
         },
     ]);
 
+    const handleAllNotifications = (e: MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+
+        const newNotifications = notifications.map(n => {
+            return {...n,isRead: true};
+        });
+
+        setNotifications(newNotifications)
+    }
+
     return (
         <div className="App">
-            <NotificationHeader notificationCount={notifications.length} />
+            <NotificationHeader notificationCount={notifications.filter(notif => !notif.isRead).length} handleAllNotifications={handleAllNotifications} />
+
+            {notifications.map(notif => {
+                return <NotificationComponent notification={notif} key={notif.avatar} />
+            })}
+
         </div>
     )
 }

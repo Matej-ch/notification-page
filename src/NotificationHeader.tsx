@@ -1,20 +1,15 @@
-import { MouseEvent } from 'react';
 import './NotificationHeader.scss'
 
 type props = {
     notificationCount:number,
+    handleAllNotifications:Function
 }
-function NotificationHeader({notificationCount}:props)
+function NotificationHeader({notificationCount,handleAllNotifications}:props)
 {
-
-    const readAllNotifications = (e: MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault()
-    }
-
     return (<div className='notification-header'>
         <h1>Notifications <span>{notificationCount}</span></h1>
         <div>
-            <a href="#" onClick={(e) => readAllNotifications(e)}>Mark all as read</a>
+            <a href="#" onClick={(e) => handleAllNotifications(e)}>Mark all as read</a>
         </div>
     </div>)
 }
